@@ -1,0 +1,36 @@
+# macOS / Python
+.DS_Store
+__pycache__/
+*.pyc
+*.lock
+*.log
+
+# Python ortamları, indirilen modeller, derlenmiş yardımcılar
+sistem/venv/
+sistem/hand_env/
+sistem/models/
+sistem/.swift-cache/
+sistem/helpers/bin/
+sistem/helpers/*.app/
+
+# Kişisel veriler ve anahtarlar (örnek dosyalar hariç)
+*.sqlite3
+*.sqlite3-*
+sistem/config/*.json
+!sistem/config/*.example.json
+sistem/memory/*.json
+!sistem/memory/*.example.json
+sistem/jarvis_web/web_config.json
+sistem/jarvis_web/android_devices.json
+sistem/jarvis_web/certs/
+
+# Android derleme ve imza
+android/.gradle/
+android/.kotlin/
+android/**/build/
+android/dist/
+local.properties
+*.jks
+*.keystore
+*.p12
+signing.json

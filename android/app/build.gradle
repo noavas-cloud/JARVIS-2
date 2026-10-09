@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+}
+
+android {
+    namespace 'com.kemal.jarvis'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.kemal.jarvis'
+        minSdk 26
+        targetSdk 35
+        versionCode 16
+        versionName '2.4.0'
+    }
+    buildFeatures { compose true; buildConfig true }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    kotlinOptions { jvmTarget = '17' }
+    signingConfigs {
+        release {
+            if (System.getenv('JARVIS_KEYSTORE')) {
+                storeFile file(System.getenv('JARVIS_KEYSTORE'))
+                storePassword System.getenv('JARVIS_STORE_PASSWORD')
+                keyAlias System.getenv('JARVIS_KEY_ALIAS')
+                keyPassword System.getenv('JARVIS_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        // Debug derlemesi emülatör denemeleri içindir: sahte Gemini/Mac sunucusuna http://10.0.2.2 üzerinden bağlanabilir.
+        debug { buildConfigField 'boolean', 'DEV_ENDPOINTS', 'true' }
+        release {
+            minifyEnabled false
+            buildConfigField 'boolean', 'DEV_ENDPOINTS', 'false'
+            if (System.getenv('JARVIS_KEYSTORE')) signingConfig signingConfigs.release
+        }
+    }
+    testOptions { unitTests.returnDefaultValues = true }
+    lint { abortOnError true; checkReleaseBuilds true; disable 'GradleDependency', 'NewerVersionAvailable', 'AndroidGradlePluginVersion', 'OldTargetApi' }
+}
+
+dependencies {
+    implementation platform('androidx.compose:compose-bom:2025.04.01')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.foundation:foundation'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.activity:activity-compose:1.10.1'
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.8.7'
+    implementation 'androidx.lifecycle:lifecycle-service:2.8.7'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.12.0'
+}

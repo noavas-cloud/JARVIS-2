@@ -1,0 +1,19 @@
+<resources>
+    <style name="AppTheme" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:colorAccent">#43E9BB</item>
+        <item name="android:windowBackground">#070D12</item>
+        <item name="android:navigationBarColor">#070D12</item>
+        <item name="android:statusBarColor">#070D12</item>
+    </style>
+    <!-- Yan tuş paneli: arkadaki uygulama görünür kalır, panel alttan kayarak gelir. -->
+    <style name="AssistTheme" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:colorAccent">#43E9BB</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.InputMethod</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+</resources>

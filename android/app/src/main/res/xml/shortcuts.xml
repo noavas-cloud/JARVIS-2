@@ -1,0 +1,10 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="talk" android:enabled="true" android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_talk">
+        <intent android:action="com.kemal.jarvis.TALK" android:targetPackage="com.kemal.jarvis" android:targetClass="com.kemal.jarvis.MainActivity" />
+    </shortcut>
+    <shortcut android:shortcutId="type" android:enabled="true" android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_type">
+        <intent android:action="com.kemal.jarvis.TYPE" android:targetPackage="com.kemal.jarvis" android:targetClass="com.kemal.jarvis.MainActivity" />
+    </shortcut>
+</shortcuts>

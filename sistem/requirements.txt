@@ -1,0 +1,14 @@
+# JARVIS macOS — Gerekli paketler
+google-genai
+opencv-python
+SpeechRecognition
+faster-whisper>=1.2.1,<2
+pyaudio
+psutil
+Pillow
+requests
+# Telefon (JARVIS Telefon) özelliği — uygulama içi web sunucusu + QR
+fastapi
+uvicorn
+websockets
+qrcode

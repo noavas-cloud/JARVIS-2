@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JARVIS</string>
+    <string name="widget_talk">JARVIS · Konuş</string>
+    <string name="widget_desc">Dokun ve JARVIS ile konuş</string>
+    <string name="shortcut_talk">Konuş</string>
+    <string name="shortcut_type">Yaz</string>
+    <string name="tile_label">JARVIS</string>
+</resources>

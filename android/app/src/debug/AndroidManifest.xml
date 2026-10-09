@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- Yalnız debug derlemesi: emülatör denemelerinde sahte Gemini sunucusunu ayarlar.
+             adb shell am start -n com.kemal.jarvis/.DevActivity -e live_url ws://10.0.2.2:9010/live -->
+        <activity android:name=".DevActivity" android:exported="true" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- Yalnız debug: kürenin tüm hâlleri (adb shell am start -n com.kemal.jarvis/.OrbPreviewActivity) -->
+        <activity android:name=".OrbPreviewActivity" android:exported="true" />
+    </application>
+</manifest>

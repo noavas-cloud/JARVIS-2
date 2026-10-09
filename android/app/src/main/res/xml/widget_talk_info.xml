@@ -1,0 +1,4 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="180dp" android:minHeight="48dp" android:targetCellWidth="3" android:targetCellHeight="1"
+    android:resizeMode="horizontal" android:widgetCategory="home_screen" android:initialLayout="@layout/widget_talk"
+    android:previewLayout="@layout/widget_talk" android:description="@string/widget_desc" android:updatePeriodMillis="0" />

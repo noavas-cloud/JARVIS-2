@@ -1,0 +1,6 @@
+Test verisi kaynakları (yalnızca testlerde kullanılır):
+- mediapipe_real_landmarks.json: google-ai-edge/mediapipe deposu, mediapipe/tasks/testdata/vision/
+  (victory/fist/pointing_up/thumb_up_landmarks.pbtxt ve expected_*_hand_landmarks.prototxt'tan
+  ilk 21 görüntü noktası). Lisans: Apache-2.0 (MEDIAPIPE_LICENSE.txt).
+- hand_test_image.jpg: google-ai-edge/mediapipe-samples deposu,
+  examples/hand_landmarker/android/app/src/androidTest/assets/test_image.jpg. Lisans: Apache-2.0.
