@@ -9,16 +9,18 @@ Yalnız **macOS**'ta çalışır.
 
 ## Kurulum (Mac)
 
-Gerekenler: Python 3, [Homebrew](https://brew.sh) ve kendi **Gemini API anahtarın**
+Gerekenler: [Homebrew](https://brew.sh) ve kendi **Gemini API anahtarın**
 ([aistudio.google.com](https://aistudio.google.com/apikey) üzerinden ücretsiz alınır).
+Python **3.11 veya üstü** gerekir; Mac'in kendi `python3`'ü (3.9) çalışmaz, aşağıdaki komut Homebrew'dan 3.12'yi kurar.
 
 1. Depoyu indir (yeşil **Code** › **Download ZIP**) ve ZIP'i aç.
-2. Terminalde:
+2. Terminalde (`cd` satırına ZIP'ten çıkan `sistem` klasörünü Terminal penceresine sürükleyebilirsin):
 
    ```bash
-   brew install portaudio
+   brew install portaudio python@3.12
    cd JARVIS-2-main/sistem
-   python3 -m venv venv
+   rm -rf venv
+   "$(brew --prefix)/bin/python3.12" -m venv venv
    venv/bin/pip install -r requirements.txt
    cp config/api_keys.example.json config/api_keys.json
    ```
@@ -30,11 +32,15 @@ Gerekenler: Python 3, [Homebrew](https://brew.sh) ve kendi **Gemini API anahtar�
    venv/bin/python modelleri_indir.py
    ```
 
-5. Başlat:
+5. Uygulamayı oluştur (Uygulamalar klasörüne ve masaüstüne **JARVIS 2** simgesi gelir):
 
    ```bash
-   venv/bin/python -m jarvis.app
+   venv/bin/python -m jarvis.app_bundle
    ```
+
+   Bundan sonra JARVIS 2'yi simgesine çift tıklayarak açarsın. İndirdiğin klasörü silme ya da taşıma;
+   uygulama o klasördeki dosyaları kullanır (taşırsan bu komutu yeni yerde yeniden çalıştır).
+   Terminalden açmak için: `venv/bin/python -m jarvis.app`
 
    İlk açılışta macOS mikrofon, ekran kaydı gibi izinleri sorar. İzin verilmezse ilgili özellikler çalışmaz.
 
